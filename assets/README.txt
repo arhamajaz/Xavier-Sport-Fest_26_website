@@ -1,0 +1,1 @@
+﻿Place the provided competition logo file here as: assets/
