@@ -1,7 +1,7 @@
 ﻿# X-hilaration 2026 ðŸ†
 
 **Inter-College Sports Festival Website**  
-Xavier University, Patna | March 23-29, 2026
+Xavier University, Patna | March 23-28, 2026
 
 ---
 
@@ -16,7 +16,7 @@ X-hilaration 2026 is a high-energy, dark-themed website designed for an inter-co
 - **Glassmorphism Cards**: Enhanced frosted glass effect with blue/green neon glow
 - **Smooth Animations**: AOS (Animate On Scroll) library integration
 - **Fully Responsive**: Mobile-first design that works on all devices
-- **Interactive Elements**: Multi-step forms, filters, modals, and accordion FAQs
+- **Interactive Elements**: Sport modals, schedule tabs, leaderboard tabs, and accordion FAQs
 
 ---
 
@@ -25,7 +25,7 @@ X-hilaration 2026 is a high-energy, dark-themed website designed for an inter-co
 ### 1. **Hero Section** (`#home`)
 - Large animated title with neon glow effects
 - Live countdown timer to March 23, 2026
-- "Register Now" CTA button
+- "View Schedule" CTA button
 - Animated background with floating orbs
 - Scroll indicator
 
@@ -33,8 +33,8 @@ X-hilaration 2026 is a high-energy, dark-themed website designed for an inter-co
 - Festival introduction and highlights
 - Animated statistics counter:
   - 2,000+ Athletes Expected
-  - 50+ Participating Colleges
-  - 6 Sports Events
+  - 150+ Teams Expected
+  - 7 Sports Events
   - â‚¹500,000 Prize Pool
 
 ### 3. **Sports Section** (`#sports`)
@@ -54,28 +54,12 @@ X-hilaration 2026 is a high-energy, dark-themed website designed for an inter-co
 - Venue and timing information
 - Special highlight for EDM closing night
 
-### 5. **Registration Section** (`#register`)
-- Premium multi-step registration form:
-  - **Step 1**: College Information (name, state, address, contact details)
-  - **Step 2**: Sport Selection (checkbox grid for 6 sports)
-  - **Step 3**: Team Details (athletes count, requirements, file upload)
-  - **Step 4**: Review & Confirmation
-- Progress indicator
-- Form validation
-- Success confirmation
+### 5. **Registration Flow**
+- On-page team registration has been removed.
+- Team registration is handled externally through a Google Form.
 
-### 6. **Participating Colleges** (`#colleges`)
-- Grid display of 18+ colleges
-- State-based filtering system:
-  - All States
-  - Bihar
-  - Jharkhand
-  - Uttar Pradesh
-  - West Bengal
-  - Odisha
-  - Chhattisgarh
-  - Other
-- Dynamic statistics (total colleges, states represented)
+### 6. **Institution Listings**
+- The on-page institution listing section has been removed until official data is finalized.
 
 ### 7. **Leaderboard Section** (`#leaderboard`)
 - Results & standings UI
@@ -86,7 +70,7 @@ X-hilaration 2026 is a high-energy, dark-themed website designed for an inter-co
 ### 8. **EDM Night Showcase** (`#edm`)
 - Full-screen section with dramatic design
 - Event details:
-  - Date: March 29, 2026
+  - Date: March 28, 2026
   - Time: 8:00 PM - 2:00 AM
   - Venue: Open Air Arena
 - Features: Top DJs, Live Performances, Light Show, Pyrotechnics
@@ -286,8 +270,6 @@ x-hilaration-2026/
 - `/#about` - About the festival
 - `/#sports` - Sports events
 - `/#schedule` - Event schedule
-- `/#register` - Registration form
-- `/#colleges` - Participating colleges
 - `/#leaderboard` - Results & leaderboard
 - `/#edm` - EDM night details
 - `/#sponsors` - Sponsor information
@@ -295,9 +277,7 @@ x-hilaration-2026/
 
 ### Interactive Elements
 - Sport cards â†’ Opens detailed modal
-- Filter buttons â†’ Filters colleges by state
 - FAQ items â†’ Expands/collapses answers
-- Form steps â†’ Multi-step navigation
 - Schedule tabs â†’ Switches between days
 - Leaderboard tabs â†’ Switches between sports
 
@@ -323,9 +303,6 @@ const eventDate = new Date('March 23, 2026 08:00:00').getTime();
 
 ### Adding Sports
 Update `sportDetails` object in `js/script.js` with new sport information.
-
-### Modifying Colleges List
-Edit `collegesData` array in `js/script.js` to add/remove colleges.
 
 ---
 

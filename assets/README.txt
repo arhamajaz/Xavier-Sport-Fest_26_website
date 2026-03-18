@@ -1,1 +1,1 @@
-﻿Place the provided competition logo file here as: assets/
+﻿Place the provided competition logo file here as: assets/x-hilaration-logo.png

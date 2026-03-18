@@ -8,26 +8,27 @@
    ==================================== */
 :root {
     /* Colors - Cyber Aqua + Neon Green Palette */
-    --color-primary: #70E000; /* Neon Green */
-    --color-secondary: #70E000; /* Neon Green */
-    --color-accent: #70E000; /* Neon Green */
-    --color-glow-green: #9CF24D; /* Neon Glow */
-    --color-glow-blue: #70E000; /* Neon Green */
+    --color-important-fixed: #29BF12; /* Permanent important text/heading/countdown color */
+    --color-primary: var(--color-important-fixed); /* Neon Green */
+    --color-secondary: var(--color-important-fixed); /* Neon Green */
+    --color-accent: var(--color-important-fixed); /* Neon Green */
+    --color-glow-green: var(--color-important-fixed); /* Neon Glow */
+    --color-glow-blue: var(--color-important-fixed); /* Neon Green */
     --color-orange: #00d4ff; /* Cool Cyan */
     
     --color-bg-dark: #020c22;
     --color-bg-navy: #031a39;
     --color-bg-card: rgba(2, 24, 52, 0.76);
     --color-text-primary: #eaf7ff;
-    --color-text-secondary: #70E000;
+    --color-text-secondary: var(--color-important-fixed);
     --color-border: rgba(0, 196, 255, 0.28);
-    --color-neon-heading-dark: #70E000;
-    --color-neon-heading: #70E000;
-    --color-neon-heading-cyan: #70E000;
-    --gradient-neon-heading: linear-gradient(100deg, #70E000 0%, #70E000 48%, #70E000 100%);
+    --color-neon-heading-dark: var(--color-important-fixed);
+    --color-neon-heading: var(--color-important-fixed);
+    --color-neon-heading-cyan: var(--color-important-fixed);
+    --gradient-neon-heading: linear-gradient(100deg, var(--color-important-fixed) 0%, var(--color-important-fixed) 48%, var(--color-important-fixed) 100%);
     --shadow-neon-heading:
-        0 0 14px rgba(112, 224, 0, 0.35),
-        0 0 30px rgba(112, 224, 0, 0.22);
+        0 0 14px rgba(41, 191, 18, 0.35),
+        0 0 30px rgba(41, 191, 18, 0.22);
     
     /* Typography */
     --font-display: 'Oxanium', 'Orbitron', sans-serif;
@@ -79,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     font-weight: 700;
     color: var(--color-neon-heading);
-    text-shadow: 0 0 12px rgba(112, 224, 0, 0.28);
+    text-shadow: 0 0 12px rgba(41, 191, 18, 0.28);
 }
 
 a {
@@ -194,12 +195,26 @@ img {
     border: 2px solid var(--color-primary);
     font-size: 0.9rem;
     box-shadow: var(--shadow-glow) rgba(0, 196, 255, 0.2);
+    justify-content: center;
+    text-align: center;
 }
 
 .btn-sport:hover {
     background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
     color: #ffffff;
     border-color: var(--color-glow-green);
+}
+
+.btn-sport-register {
+    background: transparent;
+    color: var(--color-text-primary);
+    border-color: var(--color-border);
+}
+
+.btn-sport-register:hover {
+    background: rgba(41, 191, 18, 0.2);
+    color: #ffffff;
+    border-color: var(--color-primary);
 }
 
 /* ====================================
@@ -395,6 +410,20 @@ img {
         linear-gradient(180deg, #010d26 0%, #02234d 52%, #010d26 100%);
 }
 
+.hero-logo-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/x-hilaration-logo.png');
+    background-repeat: no-repeat;
+    background-position: center 54%;
+    background-size: min(72vw, 900px);
+    opacity: 0.17;
+    filter: blur(0.6px);
+    animation: heroLogoPulse 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
 .hero-bg::before {
     content: '';
     position: absolute;
@@ -429,6 +458,7 @@ img {
         linear-gradient(90deg, rgba(58, 255, 122, 0.08) 1px, transparent 1px);
     background-size: 50px 50px;
     opacity: 0.4;
+    z-index: 2;
 }
 
 .grid-overlay::after {
@@ -444,6 +474,7 @@ img {
     filter: blur(120px);
     opacity: 0.5;
     animation: float 20s infinite ease-in-out;
+    z-index: 1;
 }
 
 .orb-1 {
@@ -484,6 +515,11 @@ img {
     50% { opacity: 0.9; transform: scale(1.035); }
 }
 
+@keyframes heroLogoPulse {
+    0%, 100% { opacity: 0.15; filter: blur(0.4px); transform: scale(1); }
+    50% { opacity: 0.2; filter: blur(1.6px); transform: scale(1.03); }
+}
+
 .hero-content {
     position: relative;
     z-index: 10;
@@ -518,7 +554,7 @@ img {
     height: 11px;
     border-radius: 50%;
     background: var(--color-neon-heading);
-    box-shadow: 0 0 12px rgba(0, 241, 154, 0.8);
+    box-shadow: 0 0 12px rgba(41, 191, 18, 0.8);
     flex: 0 0 auto;
 }
 
@@ -526,8 +562,8 @@ img {
     font-size: clamp(2.5rem, 7.2vw, 6.15rem);
     margin-bottom: var(--spacing-sm);
     text-shadow: 
-        0 0 16px rgba(112, 224, 0, 0.36),
-        0 0 40px rgba(112, 224, 0, 0.28);
+        0 0 16px rgba(41, 191, 18, 0.36),
+        0 0 40px rgba(41, 191, 18, 0.28);
     font-weight: 900;
 }
 
@@ -547,7 +583,7 @@ img {
     color: var(--color-neon-heading);
     font-size: 0.32em;
     letter-spacing: 4px;
-    text-shadow: 0 0 10px rgba(112, 224, 0, 0.24);
+    text-shadow: 0 0 10px rgba(41, 191, 18, 0.24);
 }
 
 .title-year {
@@ -555,7 +591,7 @@ img {
     margin-top: 0.15em;
     color: var(--color-neon-heading-dark);
     font-size: 0.5em;
-    text-shadow: 0 0 14px rgba(112, 224, 0, 0.32);
+    text-shadow: 0 0 14px rgba(41, 191, 18, 0.32);
 }
 
 @keyframes glow {
@@ -639,7 +675,7 @@ img {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 0 24px rgba(112, 224, 0, 0.34);
+    text-shadow: 0 0 24px rgba(41, 191, 18, 0.34);
     font-weight: 900;
 }
 
@@ -671,7 +707,7 @@ img {
     background-clip: text;
     margin-top: var(--spacing-md);
     letter-spacing: 2px;
-    text-shadow: 0 0 14px rgba(112, 224, 0, 0.25);
+    text-shadow: 0 0 14px rgba(41, 191, 18, 0.25);
 }
 
 .hero-dates i {
@@ -957,6 +993,17 @@ section {
 .sport-info i {
     color: var(--color-secondary);
     filter: drop-shadow(0 0 5px var(--color-secondary));
+}
+
+.sport-actions {
+    display: grid;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.sport-actions .btn {
+    justify-content: center;
+    text-align: center;
 }
 
 /* ====================================
@@ -1602,9 +1649,11 @@ section {
     position: relative;
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     overflow: hidden;
+    padding-top: clamp(4.5rem, 8vh, 7rem);
+    padding-bottom: clamp(3rem, 6vh, 5rem);
     background: 
         radial-gradient(circle at 30% 50%, rgba(0, 196, 255, 0.3) 0%, transparent 50%),
         radial-gradient(circle at 70% 50%, rgba(58, 255, 122, 0.3) 0%, transparent 50%),
@@ -1617,6 +1666,44 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 1;
+}
+
+.edm-bg-fallback {
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/A_highenergy_futuristic_cyberpunk_arena_video_ghos_delpmaspu.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.edm-bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    opacity: 0.58;
+    transition: opacity 0.4s ease;
+}
+
+.edm.video-active .edm-bg-video {
+    display: block;
+    opacity: 0.58;
+}
+
+.edm.video-active .edm-bg-fallback {
+    display: none;
+}
+
+.edm.video-fallback .edm-bg-video {
+    display: none;
+}
+
+.edm.video-fallback .edm-bg-fallback {
+    display: block;
 }
 
 .edm-overlay {
@@ -1625,10 +1712,12 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(0, 196, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(58, 255, 122, 0.15) 0%, transparent 50%);
+    background:
+        linear-gradient(180deg, rgba(1, 12, 31, 0.74) 0%, rgba(1, 20, 43, 0.54) 45%, rgba(1, 10, 24, 0.72) 100%),
+        radial-gradient(circle at 20% 50%, rgba(0, 196, 255, 0.22) 0%, transparent 52%),
+        radial-gradient(circle at 80% 50%, rgba(41, 191, 18, 0.2) 0%, transparent 52%);
     animation: pulse 5s ease-in-out infinite;
+    z-index: 2;
 }
 
 .edm-content {
@@ -1636,6 +1725,9 @@ section {
     z-index: 10;
     text-align: center;
     padding: var(--spacing-lg);
+    transform: translateY(-32px);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .edm-badge {
@@ -1707,6 +1799,8 @@ section {
     margin: var(--spacing-lg) 0;
     padding: var(--spacing-lg);
     border: 2px solid var(--color-border);
+    background: rgba(1, 22, 46, 0.58);
+    backdrop-filter: blur(8px);
 }
 
 .edm-detail-item {
@@ -2478,6 +2572,11 @@ section {
     .hero {
         padding-top: 138px;
     }
+
+    .hero-logo-bg {
+        background-size: min(86vw, 760px);
+        background-position: center 56%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -2541,6 +2640,11 @@ section {
         padding-top: 132px;
     }
 
+    .hero-logo-bg {
+        background-size: min(94vw, 620px);
+        background-position: center 58%;
+    }
+
     .hero-top-info {
         width: min(96vw, 620px);
         padding: 10px 16px;
@@ -2600,6 +2704,10 @@ section {
         flex-direction: column;
         gap: var(--spacing-md);
     }
+
+    .edm-content {
+        transform: translateY(-16px);
+    }
     
     .sponsor-tier-grid {
         grid-template-columns: 1fr;
@@ -2627,9 +2735,18 @@ section {
         padding-top: 128px;
     }
 
+    .hero-logo-bg {
+        background-size: min(98vw, 520px);
+        background-position: center 59%;
+    }
+
     .hero-top-info {
         font-size: 0.65rem;
         letter-spacing: 1.2px;
+    }
+
+    .edm-content {
+        transform: translateY(-8px);
     }
     
     .countdown-item {
