@@ -94,6 +94,7 @@ function animateStats() {
             if (entry.isIntersecting) {
                 const target = entry.target;
                 const count = parseInt(target.getAttribute('data-count'));
+                const suffix = target.getAttribute('data-suffix') || '';
                 let current = 0;
                 const increment = count / 100;
                 const duration = 2000; // 2 seconds
@@ -102,10 +103,10 @@ function animateStats() {
                 const counter = setInterval(() => {
                     current += increment;
                     if (current >= count) {
-                        target.textContent = count.toLocaleString();
+                        target.textContent = `${count.toLocaleString()}${suffix}`;
                         clearInterval(counter);
                     } else {
-                        target.textContent = Math.floor(current).toLocaleString();
+                        target.textContent = `${Math.floor(current).toLocaleString()}${suffix}`;
                     }
                 }, stepTime);
                 
@@ -141,8 +142,11 @@ function showSchedule(dayId, buttonEl) {
     }
 }
 
-function showFormsComingSoon() {
-    alert('Forms coming soon');
+function openBasketballGirlsRulebook() {
+    const girlsRulebook = window.open('assets/basketball%20girls.pdf', '_blank', 'noopener,noreferrer');
+    if (!girlsRulebook) {
+        alert('Girls basketball rulebook is available in assets/basketball girls.pdf');
+    }
 }
 
 // ====================================
@@ -189,6 +193,9 @@ const sportDetails = {
             'Best Player: Rs 5,000',
             'Golden Boot: Rs 5,000'
         ],
+        registrationFee: [
+            'Entry Fee: Rs 3000 per team'
+        ],
         dates: 'March 23-27, 2026',
         venue: 'Main Football Ground'
     },
@@ -209,6 +216,14 @@ const sportDetails = {
             'MVP: Rs 5,000',
             'Highest Scorer: Rs 3,000'
         ],
+        registrationFee: [
+            'Entry Fee: Rs 2000 per team'
+        ],
+        registerLink: 'https://docs.google.com/forms/d/e/1FAIpQLSe_FR1J4GLvlJPaqQusQM2_te7uXdlpq9wzUGenvc2cLAxsdg/viewform',
+        rulebooks: [
+            { label: 'Basketball Boys Rulebook (PDF)', href: 'assets/basketball%20boys.pdf' },
+            { label: 'Basketball Girls Rulebook (PDF)', href: 'assets/basketball%20girls.pdf' }
+        ],
         dates: 'March 23-26, 2026',
         venue: 'Indoor Basketball Court 1'
     },
@@ -228,6 +243,13 @@ const sportDetails = {
             'Runner-up: Rs 18,000 + Trophy',
             'Best Spiker: Rs 3,000',
             'Best Setter: Rs 3,000'
+        ],
+        registrationFee: [
+            'Entry Fee: Rs 2000 per team'
+        ],
+        registerLink: 'https://docs.google.com/forms/d/13PXw8YzOyW-T7Q8cQxN_XgjhvPDtprvNCkXfIbAVY0M/viewform?edit_requested=true',
+        rulebooks: [
+            { label: 'Volleyball Rulebook (PDF)', href: 'assets/Volleyball%20Rule%20Book.pdf' }
         ],
         dates: 'March 24-27, 2026',
         venue: 'Volleyball Court Complex'
@@ -250,6 +272,14 @@ const sportDetails = {
             'Best Batsman: Rs 5,000',
             'Best Bowler: Rs 5,000'
         ],
+        registrationFee: [
+            'Boys Team Fee: Rs 5000',
+            'Girls Team Fee: Rs 2000'
+        ],
+        registerLink: 'https://docs.google.com/forms/d/1HwIKfMCtqmzeqqNdwKOuEjIdL9Z6aQSQRgOY0GqmRBY/viewform?edit_requested=true',
+        rulebooks: [
+            { label: 'Cricket Rulebook (PDF)', href: 'assets/CRICKET.pdf' }
+        ],
         dates: 'March 23-28, 2026',
         venue: 'Cricket Stadium'
     },
@@ -270,6 +300,10 @@ const sportDetails = {
             'Best Raider: Rs 5,000',
             'Best Defender: Rs 5,000'
         ],
+        registrationFee: [
+            'Entry Fee: Rs 2000 per team'
+        ],
+        registerLink: 'assets/X-hilaration%20Xavier%27s%20Sports%20Fest%20Rulebook.pdf',
         dates: 'March 25-28, 2026',
         venue: 'Kabaddi Arena'
     },
@@ -289,6 +323,16 @@ const sportDetails = {
             'Singles Runner-up: Rs 8,000 + Trophy',
             'Doubles Winner: Rs 20,000 + Trophy',
             'Doubles Runner-up: Rs 10,000 + Trophy'
+        ],
+        registrationFee: [
+            'Singles: Rs 250',
+            'Doubles: Rs 500',
+            'Mix Doubles: Rs 500',
+            'Team Event: Rs 1500'
+        ],
+        registerLink: 'https://docs.google.com/forms/d/e/1FAIpQLSean5WVtkgSLuz58TwiMsSwsYxIH2-0McuNTvs82oEQT5rUHg/viewform',
+        rulebooks: [
+            { label: 'Table Tennis Rulebook (PDF)', href: 'assets/X_Hilaration_2026_Table_Tennis_Rulebook_COMPLETE.pdf' }
         ],
         dates: 'March 24-26, 2026',
         venue: 'Table Tennis Hall'
@@ -310,8 +354,36 @@ const sportDetails = {
             'MVP: Rs 4,000',
             'Best Strategy Team: Rs 3,000'
         ],
+        registrationFee: [
+            'BGMI: Rs 400 per team',
+            'Free Fire: Rs 400 per team'
+        ],
+        registerLink: 'https://docs.google.com/forms/d/e/1FAIpQLSf9SlK9pYp6AJoEvUV50SiJWcG0oYXK7QD5P3Y1xgYIZy2IGQ/viewform',
         dates: 'March 24-28, 2026',
         venue: 'E Sports Arena'
+    },
+    athletics: {
+        name: 'Athletics',
+        icon: 'fas fa-person-running',
+        description: 'Track and field events featuring speed, endurance, jumps, and throws.',
+        rules: [
+            'Individual participation across track and field categories',
+            'Standard federation event rules apply',
+            'Track events use timed heats and finals',
+            'Field events follow best-attempt qualification',
+            'Reporting 45 minutes before event start is mandatory'
+        ],
+        prizes: [
+            'Gold Medal + Certificate (each event)',
+            'Silver Medal + Certificate (each event)',
+            'Bronze Medal + Certificate (each event)'
+        ],
+        registrationFee: [
+            'Entry Fee: Rs 100 per event'
+        ],
+        registerLink: 'assets/X-Leration%20Athletics%20Rulebook.pdf',
+        dates: 'March 24-28, 2026',
+        venue: 'Athletics Track & Field Arena'
     }
 };
 
@@ -319,6 +391,47 @@ function openSportModal(sportKey) {
     const modal = document.getElementById('sportModal');
     const modalBody = document.getElementById('sportModalBody');
     const sport = sportDetails[sportKey];
+    if (!sport) return;
+
+    const feeSection = sport.registrationFee && sport.registrationFee.length > 0
+        ? `
+        <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-receipt" style="color: var(--color-primary);"></i>
+                Registration Fee
+            </h3>
+            <ul style="list-style: none; padding: 0;">
+                ${sport.registrationFee.map(fee => `
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-tag" style="color: var(--color-primary);"></i>
+                        <span>${fee}</span>
+                    </li>
+                `).join('')}
+            </ul>
+        </div>`
+        : '';
+
+    const rulebookSection = sport.rulebooks && sport.rulebooks.length > 0
+        ? `
+        <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-file-pdf" style="color: var(--color-secondary);"></i>
+                Rulebook PDF
+            </h3>
+            <div style="display: grid; gap: 0.8rem;">
+                ${sport.rulebooks.map(rulebook => `
+                    <a href="${rulebook.href}" target="_blank" rel="noopener noreferrer" class="btn btn-sport" style="justify-content: center;">
+                        <i class="fas fa-download"></i>
+                        ${rulebook.label}
+                    </a>
+                `).join('')}
+            </div>
+        </div>`
+        : '';
+
+    const registerHref = sport.registerLink || '#contact';
+    const registerExternalAttrs = /^https?:\/\//.test(registerHref) ? 'target="_blank" rel="noopener noreferrer"' : '';
+    const registerLabel = sport.registerLink ? 'Register Now' : 'Contact for Registration';
     
     modalBody.innerHTML = `
         <div style="text-align: center; margin-bottom: 2rem;">
@@ -341,6 +454,8 @@ function openSportModal(sportKey) {
                 </div>
             </div>
         </div>
+        ${feeSection}
+        ${rulebookSection}
         
         <div style="margin-bottom: 2rem;">
             <h3 style="font-size: 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
@@ -373,9 +488,9 @@ function openSportModal(sportKey) {
         </div>
         
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="#contact" class="btn btn-primary" onclick="closeSportModal()">
+            <a href="${registerHref}" class="btn btn-primary" ${registerExternalAttrs} onclick="closeSportModal()">
                 <i class="fas fa-rocket"></i>
-                Contact for Registration
+                ${registerLabel}
             </a>
         </div>
     `;

@@ -270,6 +270,11 @@ img {
     filter: drop-shadow(0 0 16px rgba(0, 196, 255, 0.42));
 }
 
+.logo .nav-logo {
+    width: clamp(52px, 4.3vw, 74px);
+    height: clamp(52px, 4.3vw, 74px);
+}
+
 .logo .brand-text {
     white-space: nowrap;
     background: var(--gradient-neon-heading);
@@ -840,6 +845,10 @@ section {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+}
+
+.about-rulebook {
+    margin-top: var(--spacing-md);
 }
 
 .highlight-item {
