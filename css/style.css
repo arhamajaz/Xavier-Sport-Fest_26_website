@@ -275,6 +275,13 @@ img {
     height: clamp(52px, 4.3vw, 74px);
 }
 
+.logo .nav-logo-secondary {
+    width: auto;
+    height: clamp(42px, 3.6vw, 62px);
+    max-width: clamp(64px, 9vw, 130px);
+    object-fit: contain;
+}
+
 .logo .brand-text {
     white-space: nowrap;
     background: var(--gradient-neon-heading);
@@ -644,6 +651,15 @@ img {
     filter: drop-shadow(0 0 10px var(--color-primary));
 }
 
+.hero-edm-note {
+    margin: 0 0 var(--spacing-sm);
+    font-size: clamp(1rem, 1.8vw, 1.35rem);
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--color-neon-heading);
+    text-shadow: 0 0 14px rgba(41, 191, 18, 0.3);
+}
+
 /* Countdown Timer */
 .countdown {
     display: flex;
@@ -974,6 +990,12 @@ section {
     font-size: 1.8rem;
     margin-bottom: var(--spacing-sm);
     letter-spacing: 3px;
+}
+
+.sport-name-powerlifting {
+    width: 100%;
+    text-align: center;
+    letter-spacing: 2px;
 }
 
 .sport-desc {
@@ -2276,12 +2298,58 @@ section {
 }
 
 .footer-bottom {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
     padding-top: var(--spacing-md);
     border-top: 1px solid var(--color-border);
     color: var(--color-text-secondary);
     font-size: 0.9rem;
     letter-spacing: 1px;
+}
+
+.footer-bottom-left {
+    margin: 0;
+    text-align: left;
+}
+
+.footer-bottom-right {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.footer-designer {
+    font-weight: 700;
+    color: var(--color-neon-heading);
+}
+
+.footer-designer-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-designer-links a {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1.6px solid var(--color-border);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-neon-heading);
+    background: rgba(0, 18, 45, 0.52);
+    transition: all 0.25s ease;
+}
+
+.footer-designer-links a:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-neon-heading);
+    box-shadow: 0 0 14px rgba(41, 191, 18, 0.38);
 }
 
 /* ====================================
@@ -2522,6 +2590,11 @@ section {
         height: 66px;
     }
 
+    .logo .nav-logo-secondary {
+        height: 52px;
+        max-width: 108px;
+    }
+
     .logo {
         font-size: 1.4rem;
         letter-spacing: 2.4px;
@@ -2566,6 +2639,11 @@ section {
     .site-logo {
         width: 58px;
         height: 58px;
+    }
+
+    .logo .nav-logo-secondary {
+        height: 44px;
+        max-width: 92px;
     }
 
     .logo {
@@ -2617,6 +2695,11 @@ section {
     .site-logo {
         width: 56px;
         height: 56px;
+    }
+
+    .logo .nav-logo-secondary {
+        height: 38px;
+        max-width: 78px;
     }
 
     .btn-nav {
@@ -2725,11 +2808,26 @@ section {
     .footer-content {
         grid-template-columns: 1fr;
     }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .footer-bottom-right {
+        justify-content: flex-start;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-title {
         font-size: 2.2rem;
+    }
+
+    .logo .nav-logo-secondary {
+        height: 32px;
+        max-width: 66px;
     }
 
     .title-line {

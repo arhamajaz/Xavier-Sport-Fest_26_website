@@ -202,7 +202,7 @@ const sportDetails = {
     basketball: {
         name: 'Basketball',
         icon: 'fas fa-basketball-ball',
-        description: 'High-octane 5v5 basketball action on indoor courts with professional equipment.',
+        description: 'High 5 vs 5 action in outdoor courts.',
         rules: [
             'FIBA rules apply',
             '4 quarters of 10 minutes each',
@@ -225,7 +225,7 @@ const sportDetails = {
             { label: 'Basketball Girls Rulebook (PDF)', href: 'assets/basketball%20girls.pdf' }
         ],
         dates: 'March 23-26, 2026',
-        venue: 'Indoor Basketball Court 1'
+        venue: 'Outdoor Basketball Court'
     },
     volleyball: {
         name: 'Volleyball',
@@ -655,7 +655,7 @@ window.addEventListener('load', () => {
 // Console Message
 // ====================================
 console.log('%cX-HILARATION 2026', 'font-size: 24px; font-weight: bold; color: #00c4ff; text-shadow: 0 0 10px #00c4ff;');
-console.log('%cInter-College Sports Festival', 'font-size: 16px; color: #3aff7a;');
+console.log('%cInstitutional Sports Festival', 'font-size: 16px; color: #3aff7a;');
 console.log('%cXavier University, Patna | March 23-28, 2026', 'font-size: 14px; color: #3aff7a;');
 console.log('%c\nWebsite developed for the biggest sports festival of 2026', 'font-size: 12px; color: #b8c5d6;');
 
